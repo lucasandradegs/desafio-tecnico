@@ -54,3 +54,10 @@ Você pode usar ferramentas como o Insomnia, Postman ou qualquer aplicativo de s
 - TypeORM
 - MySQL
 
+## Funcionalidades
+
+O servidor deve ficar responsável para impedir que o preço dos produtos sejam alterados nos seguintes casos:
+
+- O novo preço não deve ser menor do que o preço do custo do produto (cost_price) (*Implementado* :white_check_mark:)
+- O novo preço não pode ser maior/menor do que 10% do preço atual do produto (sales_price) (I*mplementado* :white_check_mark:)
+- Se o produto faz parte de um pacote, o preço do pacote deve alterar conforme o novo valor, o mesmo serve para caso o pacote seja atualizado, alterando o valor unitário do produto também (*Não implementado* :x:)
