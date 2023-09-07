@@ -12,7 +12,8 @@ Para conseguir rodar o backend, é necessário seguir os seguintes requisitos:
 
 ## Configuração do Banco de Dados
 
-Você deve importar o arquivo para alimentar o banco de dados, para poder começar a trabalhar com as requisições.
+Você deve importar o seguinte arquivo para alimentar o banco de dados, para poder começar a trabalhar com as requisições.
+https://drive.google.com/file/d/1Ee0V42j-YmDtQeF-isqnK__wHv1c_3-f/view?usp=drive_link
 
 Você pode utilizar o seguinte comando para importar o arquivo SQL no MySQL:
 
