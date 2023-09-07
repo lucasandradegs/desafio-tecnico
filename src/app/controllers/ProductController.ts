@@ -17,14 +17,19 @@ productRouter.put('/:code', async (req: Request, res: Response): Promise<Respons
 
     try {
 
-        const getProductCostPrice = await ProductRepository.getProductByCode(product_code)
+        const getProductInformation = await ProductRepository.getProductByCode(product_code)
 
-        if(!getProductCostPrice) {
+        if(!getProductInformation) {
             return res.status(404).json({ error: `Produto não encontrado na base de dados.`})
+        }
+
+        
+        if(updatedProduct.new_price > getProductInformation.sales_price * 1.1 || updatedProduct.new_price < getProductInformation.sales_price * 0.9) {
+            return res.status(400).json({ error: `Ah não! O time do Marketing está triste. O novo preço não pode ser maior ou menor do que 10% do preço atual do produto.`})
         }
         
         if(updatedProduct.hasOwnProperty("new_price")) {
-            if(updatedProduct.new_price < getProductCostPrice.cost_price) {
+            if(updatedProduct.new_price < getProductInformation.cost_price) {
                 return res.status(400).json({ error: `Ah não! O time do financeiro está triste. O novo preço não pode ser menor do que o preço de custo.`})
             }
             
